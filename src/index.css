@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+  --color-bg: 5 7 12;
+  --color-bg-paper: 11 15 23;
+  --color-surface: 16 21 31;
+
+  --color-ink: 244 246 248;
+  --color-ink-secondary: 203 210 220;
+  --color-ink-muted: 148 163 184;
+
+  --color-accent: 13 148 136;
+  --color-accent-soft: 45 212 191;
+  --color-accent-dim: 15 118 110;
+
+  --color-border: 255 255 255;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-ink));
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+  background: rgba(13, 148, 136, 0.35);
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d9488;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2dd4bf;
+}
+
+
+/* =========================================================
+   COMPONENTS
+========================================================= */
+
+@layer components {
+
+  /* -------------------------------------------------------
+     SECTION CONTAINER
+  ------------------------------------------------------- */
+
+  .section-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+
+  /* -------------------------------------------------------
+     EYEBROW
+  ------------------------------------------------------- */
+
+  .eyebrow {
+    @apply font-mono text-xs tracking-widest uppercase text-accent flex items-center gap-2;
+  }
+
+
+  /* -------------------------------------------------------
+     CARD
+  ------------------------------------------------------- */
+
+  .card {
+    @apply bg-surface rounded-2xl backdrop-blur-sm transition-all duration-300;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+
+  /* -------------------------------------------------------
+     CARD HOVER
+  ------------------------------------------------------- */
+
+  .card-hover {
+    @apply hover:-translate-y-1.5 hover:border-accent hover:shadow-card-hover;
+  }
+
+
+  /* -------------------------------------------------------
+     PRIMARY BUTTON
+  ------------------------------------------------------- */
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+    bg-accent px-6 py-3 text-sm font-semibold text-white
+    transition-all duration-200
+    hover:bg-accent-soft
+    hover:text-accent
+    hover:shadow-glow
+    active:scale-[0.98];
+  }
+
+
+  /* -------------------------------------------------------
+     OUTLINE BUTTON
+  ------------------------------------------------------- */
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+    px-6 py-3 text-sm font-semibold text-ink
+    transition-all duration-200
+    hover:border-accent
+    hover:text-accent
+    active:scale-[0.98];
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+  }
+
+
+  /* -------------------------------------------------------
+     TECHNOLOGY CHIP
+  ------------------------------------------------------- */
+
+  .chip {
+    @apply rounded-full px-3 py-1 text-xs font-medium
+    text-ink-secondary
+    transition-all duration-200;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+
+  .chip:hover {
+    background: rgba(13, 148, 136, 0.15);
+    border-color: rgba(45, 212, 191, 0.5);
+    color: rgb(var(--color-accent-soft));
+  }
+}
+
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
+
+.gradient-text {
+  background-image: linear-gradient(
+    90deg,
+    rgb(var(--color-accent)),
+    rgb(var(--color-accent-soft))
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* =========================================================
+   GLASS EFFECT
+========================================================= */
+
+.glass {
+  background: rgba(16, 21, 31, 0.65);
+
+  /* FIXED: was red */
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* =========================================================
+   SMOOTH TRANSITION
+========================================================= */
+
+.transition-smooth {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   PROJECT DESCRIPTION
+========================================================= */
+
+.project-description {
+  color: rgb(var(--color-ink-secondary));
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   EXPERIENCE TEXT
+========================================================= */
+
+.experience-description {
+  color: rgb(var(--color-ink-secondary));
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MUTED TEXT
+========================================================= */
+
+.text-muted {
+  color: rgb(var(--color-ink-muted));
+}
+
+
+/* =========================================================
+   STRONG HEADINGS
+========================================================= */
+
+.heading {
+  color: rgb(var(--color-ink));
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TEAL ACCENT TEXT
+========================================================= */
+
+.accent-text {
+  color: rgb(var(--color-accent-soft));
+}
+
+
+/* =========================================================
+   DARK DIVIDER
+========================================================= */
+
+.divider {
+  border-color: rgba(255, 255, 255, 0.12);
+}
