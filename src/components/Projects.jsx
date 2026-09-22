@@ -5,7 +5,7 @@ import SectionHeading from './common/SectionHeading';
 import { projects } from '../data/portfolioData';
 
 import akshyaThulirImg from '../assets/AkshyaThulir.jpeg';
-import pizzaAppImg frgit branch -M mainom '../assets/pizza app.jpeg';
+import pizzaAppImg from '../assets/pizza app.jpeg';
 import dermaiImg from '../assets/dermai.gif';
 
 // Map project titles to their imported images
